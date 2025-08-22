@@ -1,32 +1,25 @@
-Plugin Builder Results
+Плагин для QGIS
+Создание высотных точек по карте высот
 
-Your plugin DEMtoVector was created in:
-    C:/Users/semenova.ae/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins\dem_to_vector
+Плагин был создан для автоматизации процесса получения данных для построения ЦМР в таких программах, как AutoCAD и Топоматик Robur. 
+При помощи данного плагина возможно по имеющимся радиолокационным данным (радиолокационным снимкам) получить центроиды пикселей с высотным положением в заданной системе координат.
 
-Your QGIS plugin directory is located at:
-    C:/Users/semenova.ae/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins
+Входные данные:
+1. Радиолокационный снимок или директория с данными FABDEM v1.2.
+2. Полигональный слой с границей работ или охват карты.
+3. Система координат (возможно задать через Proj).
+4. Путь сохранения DXF с точками (не обязательно).
 
-What's Next:
+Установка:
 
-  * Copy the entire directory containing your new plugin to the QGIS plugin
-    directory
+Инструкция по работе с плагином:
+1 . Задайте границу, в которой будут созданы точки (видимая часть карты, из полигона в слое, по охвату слоя).
 
-  * Compile the resources file using pyrcc5
+2. Укажите систему координат, в которой будут созданы точки (выберите из списка или задайте вручную через Proj).
 
-  * Run the tests (``make test``)
+3. Укажите, какую DEM хотите использовать (FABDEM или из вашего растрового слоя).
 
-  * Test the plugin by enabling it in the QGIS plugin manager
+4. Не обязательно. Укажите путь сохранения точек в формате DXF. Поставьте галочку для вывода промежуточных слоев, если они вам нужны.
 
-  * Customize it by editing the implementation file: ``dem_to_vector.py``
-
-  * Create your own custom icon, replacing the default icon.png
-
-  * Modify your user interface by opening DEMtoVector_dialog_base.ui in Qt Designer
-
-  * You can use the Makefile to compile your Ui and resource files when
-    you make changes. This requires GNU make (gmake)
-
-For more information, see the PyQGIS Developer Cookbook at:
-http://www.qgis.org/pyqgis-cookbook/index.html
-
-(C) 2011-2018 GeoApt LLC - geoapt.com
+5. В дополнительных настройках укажите путь к папке с исходными растрами FABDEM.
+Директория по умолчанию: O:\ОИГ\data\DEM\FABDEM
